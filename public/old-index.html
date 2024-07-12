@@ -103,13 +103,24 @@
 
         gps.addTo(map);
 
+        var otherUsersMarkers = {};
+
         socket.on('locationUpdate', (data) => {
-            var marker = L.marker(data.latlng).addTo(map).bindPopup('User location');
-            
-            marker.on('click', function() {
-                showMenu('User location', 'Description for this location');
-            });
+            L.marker(data.latlng).addTo(map).bindPopup('User location').openPopup();
+            if (!otherUsersMarkers[data.id]) {
+                otherUsersMarkers[data.id] = L.marker(data.latlng).addTo(map).bindPopup('User location').openPopup();
+            } else {
+                otherUsersMarkers[data.id].setLatLng(data.latlng);
+            }
         });
+
+        // socket.on('locationUpdate', (data) => {
+        //     var marker = L.marker(data.latlng).addTo(map).bindPopup('User location');
+            
+        //     marker.on('click', function() {
+        //         showMenu('User location', 'Description for this location');
+        //     });
+        // });
     </script>
 </body>
 </html>
