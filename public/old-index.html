@@ -18,31 +18,31 @@
             background: white;
             padding: 10px;
             border: 1px solid #ccc;
-            z-index: 1000; /* Add z-index to ensure the menu is on top */
-            display: none; /* Initially hidden */
+            z-index: 1000; 
+            display: none; 
         }
 
         .navbar {
-            height: 5%; /* Ensure the navbar height is explicitly set */
+            height: 5%; 
         }
         
         .navbar-brand img {
             height: 100%;
-            max-height: 56px; /* Match the navbar height */
+            max-height: 56px;
             width: auto;
         }
 
         .card-img-top {
             width: 100%;
-            height: auto; /* Ensures the image maintains its aspect ratio */
-            max-height: 200px; /* Optional: limit the maximum height of the image */
-            object-fit: cover; /* Ensures the image covers the entire area of its container */
+            height: auto;
+            max-height: 200px;
+            object-fit: cover;
         }
 
         .card {
-            width: 100%; /* Make the card width 100% of its container */
-            max-width: 600px; /* Optional: limit the maximum width of the card */
-            margin: auto; /* Center the card horizontally */
+            width: 100%; 
+            max-width: 600px; 
+            margin: auto; 
         }
     </style>
 </head>
@@ -79,16 +79,16 @@
         map.addLayer(new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'));
 
         var customIcon = L.icon({
-            iconUrl: 'public-images/logo.png', // Path to your custom icon image
-            iconSize: [50, 50], // Size of the icon
-            iconAnchor: [22, 22], // Point of the icon which will correspond to marker's location
-            popupAnchor: [-3, -76] // Point from which the popup should open relative to the iconAnchor
+            iconUrl: 'public-images/logo.png',
+            iconSize: [50, 50],
+            iconAnchor: [22, 22],
+            popupAnchor: [-3, -76] 
         });
 
         var gps = new L.Control.Gps({
             autoCenter: true,
             marker: new L.Marker([0, 0], {
-                icon: customIcon // Use the custom icon
+                icon: customIcon 
             })
         });
 

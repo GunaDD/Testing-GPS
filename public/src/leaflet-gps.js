@@ -144,8 +144,7 @@
             this._map.locate({
                 enableHighAccuracy: false,
                 watch: true,
-                setView: false, // this.options.autoCenter,
-                // maxZoom: this.options.maxZoom || this._map.getZoom()
+                setView: false, 
             });
         },
 
@@ -161,9 +160,6 @@
                 this._map.stopLocate();
                 this._map.removeLayer(this._gpsMarker);
             }
-
-            // this._gpsMarker.setLatLng([-90, 0]);  // move to antarctica!
-            // TODO make method .hide() using _icon.style.display = 'none'
             this.fire('gps:disabled', { marker: this._gpsMarker });
         },
 
@@ -192,9 +188,6 @@
 
             if(this.options.autoActive)
                 this.activate();
-
-            // if(this._gpsMarker.accuracyCircle)
-            //     this._gpsMarker.accuracyCircle.setRadius((e.accuracy / 2).toFixed(0));
         },
 
         _errorGps: function(e) {
@@ -208,10 +201,9 @@
         },
 
         _showMenu: function() {
-            // Get the menu element
             var menu = document.getElementById('menu');
             if (menu) {
-                // Update menu content with marker details
+
 				document.getElementById('menu-description').innerHTML = `
 						<div class="card">
 						<button type="button" class="btn-close" aria-label="Close" id="close-btn" style="position: absolute; top: 10px; right: 10px;"></button>
@@ -223,7 +215,6 @@
 						</div>
 					</div>
 				`;
-                // Display the menu
                 menu.style.display = 'block';
 
 				document.getElementById('close-btn').addEventListener('click', function() {
