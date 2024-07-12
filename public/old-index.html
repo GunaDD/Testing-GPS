@@ -106,7 +106,7 @@
         var otherUsersMarkers = {};
 
         socket.on('locationUpdate', (data) => {
-            L.marker(data.latlng).addTo(map).bindPopup('User location').openPopup();
+            // L.marker(data.latlng).addTo(map).bindPopup('User location').openPopup();
             if (!otherUsersMarkers[data.id]) {
                 otherUsersMarkers[data.id] = L.marker(data.latlng).addTo(map).bindPopup('User location').openPopup();
             } else {
