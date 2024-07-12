@@ -219,7 +219,7 @@
 						<div class="card-body">
 							<h3>Tahu Bulat</h3>
 							<p class="card-text">Tahu Bulat Digoreng dadakan Lima ratusan</p>
-							<a class="btn btn-primary" href="#" role="button">Kunjungi</a>
+							<a class="btn btn-primary" href="next-index.html" role="button">Kunjungi</a>
 						</div>
 					</div>
 				`;
