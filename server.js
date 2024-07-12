@@ -22,13 +22,15 @@ app.get('/map', (req, res) => {
 
 io.on('connection', (socket) => {
   console.log('New client connected');
-  
+
+  // Handle location updates
   socket.on('locationUpdate', (data) => {
-    io.emit('locationUpdate', data);
+    io.emit('locationUpdate', { id: socket.id, latlng: data.latlng });
   });
 
   socket.on('disconnect', () => {
     console.log('Client disconnected');
+    io.emit('userDisconnected', { id: socket.id });
   });
 });
 
